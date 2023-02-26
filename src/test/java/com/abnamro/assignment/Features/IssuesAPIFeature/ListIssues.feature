@@ -1,7 +1,7 @@
 Feature: GET Gitlab Issue
 
     Background: 
-    * url 'https://gitlab.com/api/v4'
+    * url baseURL
     * header Authorization = 'Bearer ' + 'glpat-fx8cxyo8Ph8fRSAxFixk'
 
     @Positive @GetIssues
