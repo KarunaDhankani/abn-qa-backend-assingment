@@ -2,7 +2,7 @@ Feature: Delete Gitlab Issue
 
     Background:
     * url baseURL
-    * header Authorization = 'Bearer ' + 'glpat-fx8cxyo8Ph8fRSAxFixk'
+    * header Authorization = 'Bearer ' + access_token
     * def getFeature = call read('ListIssues.feature@GetIssues')
     * def responseGet = getFeature.response
     * def project_id = responseGet[0].project_id

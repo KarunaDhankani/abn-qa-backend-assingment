@@ -2,7 +2,7 @@ Feature: POST Gitlab Issue
 
     Background:
     * url baseURL
-    * header Authorization = 'Bearer ' + 'glpat-fx8cxyo8Ph8fRSAxFixk'
+    * header Authorization = 'Bearer ' + access_token
     * def requestBody = read('/../../Resources/request.json')
     * def invalidRequestBody = read('/../../Resources/invalidRequest.json')
     * def expectedResponse = read('/../../Resources/response.json')

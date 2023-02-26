@@ -2,7 +2,7 @@ Feature: GET Gitlab Issue
 
     Background: 
     * url baseURL
-    * header Authorization = 'Bearer ' + 'glpat-fx8cxyo8Ph8fRSAxFixk'
+    * header Authorization = 'Bearer ' + access_token
 
     @Positive @GetIssues
     Scenario: GET All Gitlab Issues

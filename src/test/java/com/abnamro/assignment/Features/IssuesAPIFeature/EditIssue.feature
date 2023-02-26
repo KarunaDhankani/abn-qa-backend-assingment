@@ -2,7 +2,7 @@ Feature: Update Gitlab Issue
 
     Background:
     * url baseURL
-    * header Authorization = 'Bearer ' + 'glpat-fx8cxyo8Ph8fRSAxFixk'
+    * header Authorization = 'Bearer ' + access_token
     * def requestBody = read('/../../Resources/request.json')
     * def updateRequestCombination = read('/../../Resources/updateRequestComination.json')
     * def updateNullRequest = read('/../../Resources/updateNullRequest.json')
