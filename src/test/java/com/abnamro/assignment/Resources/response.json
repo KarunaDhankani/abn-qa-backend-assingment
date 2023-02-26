@@ -1,0 +1,65 @@
+{
+	"id": "#notnull",
+	"iid": "#number",
+	"project_id": "#number",
+	"title": "#string",
+	"description": "##string",
+	"state": "#string",
+	"created_at": "#string",
+	"updated_at": "#string",
+	"closed_at": "##string",
+	"closed_by": "#ignore",
+	"labels": [
+		"#string"
+	],
+	"milestone": "##string",
+	"assignees": [],
+	"author": {
+		"id": 13649630,
+		"username": "KarunaDhankani",
+		"name": "Karuna Dhankani",
+		"state": "active",
+		"avatar_url": "https://secure.gravatar.com/avatar/a46415dd99363ac1f9a9628e5b3351b9?s=80&d=identicon",
+		"web_url": "https://gitlab.com/KarunaDhankani"
+	},
+	"type": "ISSUE",
+	"assignee": "##string",
+	"user_notes_count": 0,
+	"merge_requests_count": 0,
+	"upvotes": 0,
+	"downvotes": 0,
+	"due_date": "##string",
+	"confidential": "#boolean",
+	"discussion_locked": "##boolean",
+	"issue_type": "issue",
+	"web_url": "#string",
+	"time_stats": {
+		"time_estimate": 0,
+		"total_time_spent": 0,
+		"human_time_estimate": null,
+		"human_total_time_spent": null
+	},
+	"task_completion_status": {
+		"count": 0,
+		"completed_count": 0
+	},
+	"blocking_issues_count": 0,
+	"has_tasks": "#boolean",
+	"task_status": "#string",
+	"_links": {
+		"self": "#string",
+		"notes": "#string",
+		"award_emoji": "#string",
+		"project": "#string",
+		"closed_as_duplicate_of": null
+	},
+	"references": {
+		"short": "#string",
+		"relative": "#string",
+		"full": "#string"
+	},
+	"severity": "#string",
+	"subscribed": "#boolean",
+	"moved_to_id": null,
+	"service_desk_reply_to": null
+}
