@@ -10,8 +10,7 @@ Feature: GET Gitlab Issue
         Given path '/issues'
         When method GET
         Then status 200
-        And print response
-
+        
     @Positive
     Scenario: GET Gitlab Issues with existing assignee id(Issue assigned to the author itself)
         * def getFeature = call read('ListIssues.feature@GetIssues')
@@ -21,7 +20,6 @@ Feature: GET Gitlab Issue
         And param assignee_id = valid_assignee_id
         When method GET
         Then status 200
-        And print response
         And assert response.length >= 1
         
     @Positive
@@ -30,7 +28,6 @@ Feature: GET Gitlab Issue
         And param assignee_id = assigneeId
         When method GET
         Then status 200
-        And print response
         And assert response.length == 0
         Examples:
             | assigneeId |
@@ -44,7 +41,6 @@ Feature: GET Gitlab Issue
         And param assignee_id = assigneeId
         When method GET
         Then status 400
-        And print response
         And def expectedError = "assignee_id should be an integer, none, or any, however got " + assigneeId
         And match response.error == expectedError
         Examples:
@@ -59,7 +55,6 @@ Feature: GET Gitlab Issue
         And param confidential = confidentialValue
         When method GET
         Then status 200
-        And print response
         Examples:
             | confidentialValue |
             | true |
@@ -71,7 +66,6 @@ Feature: GET Gitlab Issue
         And param confidential = confidentialValue
         When method GET
         Then status 400
-        And print response
         And def expectedError = "confidential is invalid"
         And match response.error == expectedError
         Examples:
@@ -87,4 +81,3 @@ Feature: GET Gitlab Issue
         When method GET      
         Then status 401
         And match response.message == "401 Unauthorized"
-        And print response
