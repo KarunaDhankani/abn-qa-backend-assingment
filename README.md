@@ -107,15 +107,11 @@ Below is the screenshot of how the report looks like:
 <details>
 <summary>Karate Test Report</summary>
 
-   ![img.png](doc/img/OverAllFeatures.png)
-
-   ![img.png](doc/img/ListIssue.png)
-   
-   ![img.png](doc/img/CreateIssue.png)
-
-   ![img.png](doc/img/UpdateIssue.png)
-
-   ![img.png](doc/img/DeleteIssue.png)
+<img width="1275" alt="OverAllFeatures" src="https://user-images.githubusercontent.com/47445151/221467589-27401d85-80b9-4cab-93e1-bac285067080.PNG">
+<img width="1270" alt="ListIssue" src="https://user-images.githubusercontent.com/47445151/221467620-5a22f9af-b28e-4d13-84e5-f7032e4e28e3.PNG">
+<img width="1271" alt="CreateIssue" src="https://user-images.githubusercontent.com/47445151/221467603-e66ec497-16b7-4189-9626-f3c36409bdcc.PNG">
+<img width="1269" alt="UpdateIssue" src="https://user-images.githubusercontent.com/47445151/221467500-df87fed6-e2bf-467b-91e2-03516268065b.PNG">
+<img width="1272" alt="DeleteIssue" src="https://user-images.githubusercontent.com/47445151/221467653-149e6c5e-4308-4ab2-921a-901e6e9aade0.PNG">
 
 </details>
 
