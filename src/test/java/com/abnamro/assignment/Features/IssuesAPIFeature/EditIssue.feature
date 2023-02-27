@@ -25,8 +25,7 @@ Feature: Update Gitlab Issue
     And match response.iid == iid
     And match response.title == updateRequest.title
     And match response.description == updateRequest.description
-    And print response
-
+    
 
     @Positive
     Scenario: Updatethe Status of the issue to Closed
@@ -37,8 +36,7 @@ Feature: Update Gitlab Issue
     And match response.project_id == project_id
     And match response.iid == iid
     And match response.state == "closed"
-    And print response
-    
+        
     
     @Negative
     Scenario: Update the Gitlab issue without the required parameters
@@ -72,7 +70,6 @@ Feature: Update Gitlab Issue
     And request requestBody
     When method PUT
     Then status 404
-    And print response
     And match response.message == "404 Project Not Found"
     Examples:
         | invalid_project_id | invalid_iid |
@@ -88,4 +85,3 @@ Feature: Update Gitlab Issue
     When method PUT
     Then status 401
     And match response.message == "401 Unauthorized"
-    And print response
