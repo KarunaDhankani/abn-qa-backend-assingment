@@ -54,12 +54,12 @@ This is a project built to cover the CRUD operations on Gitlab Issues API. I hav
 
 | Operation | Description |
 | --- | --- |
-| List Issues | This operation is to Get all issues the authenticated user has access to. https://gitlab.com/api/v4/issues - This API returns all the issues the current user has access to.One can also GET Gitlab Issues for specific assignee id by passing the assignee id as the parameter to the URL, for ex :     https://gitlab.com/api/v4/issues?assignee_id. In this solution, I have fetched the assignee_id from the response of GET all issues API and have filtered the author id from its response. Now I am using this author_id as assignee_id to get all the issues assigned to the author itself.Added to that I have also demonstrated the scenario of retrieving all the confidential and non-confidential issues by providing the boolean value to parameter - Confidential.For ex: https://gitlab.com/api/v4/issues?confidential |
-| Create New Issue | This operation creates a new project issue using API - https://gitlab.com/api/v4/projects/project_id/issues. In this solution, I am providing the project_id which i have fetched from the  response of GET all issues API.User has to provide "title" and "description" as part of request body to create a new issue. As part of validating the response of this API call, I am matching the response received of this POST call to the request body title,description and json schema of the response. |
-| Edit Issue | This operation is used to update an existing project issue by providing project id and issue id to the API: https://gitlab.com/api/v4/projects/project_id/issues/iid .In this solution,I am providing the project_id and iid which i have fetched from the  response of GET all issues API.For the successful execution of this request,atleast one of the required parameter must be provided as part of the request body. This call is also used to mark an issue as closed by providing state_event=close. |
-| Delete Issue | This operation is to delete a project issue by providing the project id and issue id to the API : https://gitlab.com/api/v4/projects/project_id/issues/iid. In this solution,I am providing the project_id and iid which i have fetched from the  response of GET all issues API. |
+| List Issues | This operation is to Get all issues the authenticated user has access to. https://gitlab.com/api/v4/issues - This API returns all the issues the current user has access to.One can also GET Gitlab Issues for specific assignee id by passing the assignee id as the parameter to the URL, for ex :     https://gitlab.com/api/v4/issues?assignee_id. Added to that I have also demonstrated the scenario of retrieving all the confidential and non-confidential issues by providing the boolean value to parameter - Confidential.For ex: https://gitlab.com/api/v4/issues?confidential |
+| Create New Issue | This operation creates a new project issue using API - https://gitlab.com/api/v4/projects/project_id/issues. User has to provide "title" and "description" as part of request body to create a new issue. As part of validating the response of this API call, I am matching the response received of this POST call to the request body title,description and json schema of the response. |
+| Edit Issue | This operation is used to update an existing project issue by providing project id and issue id to the API: https://gitlab.com/api/v4/projects/project_id/issues/iid .For the successful execution of this request,atleast one of the required parameter must be provided as part of the request body. This call is also used to mark an issue as closed by providing state_event=close. |
+| Delete Issue | This operation is to delete a project issue by providing the project id and issue id to the API : https://gitlab.com/api/v4/projects/project_id/issues/iid.|
  
- Along with the positive scenarios I have also automated some negative scenarios which can also be found in their respective feature files.
+In this solution, I have fetched the assignee_id, project_id and iid from the response of GET all issues API.I have filtered the author id from its response and using this author_id as assignee_id to get all the issues assigned to the author itself. Along with the positive scenarios I have also automated some negative scenarios which can also be found in their respective feature files.
  
 #### Sample Feature File
 
@@ -95,7 +95,7 @@ Please follow below steps to set up this project and execute the automated testc
 
 1. Clone the project `https://github.com/KarunaDhankani/abn-qa-backend-assingment.git`
 2. Provide Username and Password in `/abn-qa-backend-assingment/src/test/java/com/abnamro/assignment/Resources/config.properties` file in order to generate the oauth2 token to use Gitlab Issues API
-3. Open terminal in the root directory of the project, were pom.xml is kept
+3. Open terminal in the root directory of the project, where pom.xml is kept
 4. Execute command : `mvn clean` and then `mvn test -Dtest=TestRunner`
 5. After the successful execution of the testcases, you can find your HTML report `karate-summary.html` under folder `/abn-qa-backend-assingment/target/karate-reports/`
 
@@ -103,7 +103,7 @@ Please follow below steps to set up this project and execute the automated testc
 
 After the successful execution of all the feature files, the detailed HTML report `karate-summary.html` is generated under folder `/abn-qa-backend-assingment/target/karate-reports/`
 
-Below is the screenshot of how the report looks like:
+Below are the screenshots of how the report looks like:
 <details>
 <summary>Karate Test Report</summary>
 
