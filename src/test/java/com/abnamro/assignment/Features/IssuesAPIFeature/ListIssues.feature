@@ -78,3 +78,12 @@ Feature: GET Gitlab Issue
             | 12345 |
             | ABCDE |
             | ????? |
+
+    @Negative
+    Scenario: GET All Gitlab Issues with invalid oauth2 token
+        Given path '/issues'
+        And header Authorization = 'Bearer ' + invalid_access_token
+        When method GET      
+        Then status 401
+        And match response.message == "401 Unauthorized"
+        And print response

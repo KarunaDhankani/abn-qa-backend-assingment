@@ -66,3 +66,12 @@ Scenario Outline: Delete Gitlab issue for an invalid Project ID and invalid IID
         | 1111 | 1111|
         | ABCD | 2222|
         | ???? | 0000|
+
+@Negative
+Scenario: Delete Gitlab issue for a valid Project ID and IID with invalid oauth2 token
+    Given path '/projects/'+project_id+'/issues/'+iid
+    And header Authorization = 'Bearer ' + invalid_access_token
+    When method DELETE
+    Then status 401
+    And match response.message == "401 Unauthorized"
+    And print response

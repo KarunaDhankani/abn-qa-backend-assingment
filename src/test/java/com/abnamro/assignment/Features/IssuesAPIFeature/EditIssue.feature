@@ -78,3 +78,13 @@ Feature: Update Gitlab Issue
         | 1111 | 1111|
         | ABCD | 2222|
         | ???? | 0000|
+
+    @Negative
+    Scenario: Update the Gitlab issue with the required parameters and invalid oauth2 token
+    Given path '/projects/'+project_id+'/issues/'+iid
+    And header Authorization = 'Bearer ' + invalid_access_token
+    And request updateRequest
+    When method PUT
+    Then status 401
+    And match response.message == "401 Unauthorized"
+    And print response

@@ -55,3 +55,12 @@ Feature: POST Gitlab Issue
     And match response.error == "title is missing"
     And print response
     
+    @Negative
+    Scenario: Create a new Gitlab issue for a valid Project ID with invalid oauth2 token
+    Given path '/projects/'+project_id+'/issues'
+    And header Authorization = 'Bearer ' + invalid_access_token
+    And request requestBody
+    When method POST
+    Then status 401
+    And match response.message == "401 Unauthorized"
+    And print response
