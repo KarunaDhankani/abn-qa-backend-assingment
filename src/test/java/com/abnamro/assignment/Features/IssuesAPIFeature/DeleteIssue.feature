@@ -14,14 +14,12 @@ Scenario: Delete Gitlab issue for a valid Project ID and IID
     Given path '/projects/'+project_id+'/issues/'+iid
     When method DELETE
     Then status 204
-    And print response
-
+    
 @Negative
 Scenario Outline: Delete Gitlab issue for a valid Project ID and invalid IID(Number Type)
     Given path '/projects/'+project_id+'/issues/'+invalid_iid
     When method DELETE
     Then status 404
-    And print response
     And match response.message == "404 Issue Not Found"
     Examples:
         | invalid_iid |
@@ -34,7 +32,6 @@ Scenario Outline: Delete Gitlab issue for a valid Project ID and invalid IID(Oth
     Given path '/projects/'+project_id+'/issues/'+invalid_iid
     When method DELETE
     Then status 400
-    And print response
     And match response.error == "issue_iid is invalid"
     Examples:
         | invalid_iid |
@@ -47,7 +44,6 @@ Scenario Outline: Delete Gitlab issue for an invalid Project ID and valid IID
     Given path '/projects/'+invalid_project_id+'/issues/'+iid
     When method DELETE
     Then status 404
-    And print response
     And match response.message == "404 Project Not Found"
     Examples:
         | invalid_project_id |
@@ -60,7 +56,6 @@ Scenario Outline: Delete Gitlab issue for an invalid Project ID and invalid IID
     Given path '/projects/'+invalid_project_id+'/issues/'+invalid_iid
     When method DELETE
     Then status 404
-    And print response
     And match response.message == "404 Project Not Found"
     Examples:
         | invalid_project_id | invalid_iid |
@@ -75,4 +70,3 @@ Scenario: Delete Gitlab issue for a valid Project ID and IID with invalid oauth2
     When method DELETE
     Then status 401
     And match response.message == "401 Unauthorized"
-    And print response
