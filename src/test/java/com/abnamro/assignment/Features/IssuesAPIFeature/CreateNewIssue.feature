@@ -22,7 +22,6 @@ Feature: POST Gitlab Issue
     And match response.title == requestBody.title
     And match response.labels[0] == requestBody.labels
     And match response == expectedResponse
-    And print response
 
     @Negative
     Scenario Outline: Create a new issue for a invalid project ID
@@ -31,7 +30,6 @@ Feature: POST Gitlab Issue
     When method POST
     Then status 404
     And match response.message == "404 Project Not Found"
-    And print response
     Examples:
         | invalid_project_id |
         | 1111 |
@@ -45,7 +43,6 @@ Feature: POST Gitlab Issue
     When method POST
     Then status 404
     And match response.error == "404 Not Found"
-    And print response
 
     @Negative
     Scenario: Create a new issue without the required parameter
@@ -54,7 +51,6 @@ Feature: POST Gitlab Issue
     When method POST
     Then status 400
     And match response.error == "title is missing"
-    And print response
     
     @Negative
     Scenario: Create a new Gitlab issue for a valid Project ID with invalid oauth2 token
@@ -64,4 +60,3 @@ Feature: POST Gitlab Issue
     When method POST
     Then status 401
     And match response.message == "401 Unauthorized"
-    And print response
