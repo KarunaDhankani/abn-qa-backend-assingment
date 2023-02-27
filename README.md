@@ -104,6 +104,8 @@ Please follow below steps to set up this project and execute the automated testc
 After the successful execution of all the feature files, the detailed HTML report `karate-summary.html` is generated under folder `/abn-qa-backend-assingment/target/karate-reports/`
 
 Below is the screenshot of how the report looks like:
+<details>
+<summary>Karate Test Report</summary>
 
    ![img.png](doc/img/OverAllFeatures.png)
 
@@ -115,6 +117,7 @@ Below is the screenshot of how the report looks like:
 
    ![img.png](doc/img/DeleteIssue.png)
 
+</details>
 
 #### Refactors done to the given project
 
