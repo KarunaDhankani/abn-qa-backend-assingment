@@ -2,6 +2,7 @@ Feature: GET Gitlab Issue
 
     Background: 
     * url baseURL
+    * def access_token = karate.properties['token']
     * header Authorization = 'Bearer ' + access_token
 
     @Positive @GetIssues

@@ -2,6 +2,7 @@ Feature: POST Gitlab Issue
 
     Background:
     * url baseURL
+    * def access_token = karate.properties['token']
     * header Authorization = 'Bearer ' + access_token
     * def requestBody = read('/../../Resources/request.json')
     * def invalidRequestBody = read('/../../Resources/invalidRequest.json')

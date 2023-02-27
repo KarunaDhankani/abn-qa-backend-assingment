@@ -2,6 +2,7 @@ Feature: Delete Gitlab Issue
 
     Background:
     * url baseURL
+    * def access_token = karate.properties['token']
     * header Authorization = 'Bearer ' + access_token
     * def getFeature = call read('ListIssues.feature@GetIssues')
     * def responseGet = getFeature.response

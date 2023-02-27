@@ -2,6 +2,7 @@ Feature: Update Gitlab Issue
 
     Background:
     * url baseURL
+    * def access_token = karate.properties['token']
     * header Authorization = 'Bearer ' + access_token
     * def requestBody = read('/../../Resources/request.json')
     * def updateRequestCombination = read('/../../Resources/updateRequestComination.json')
